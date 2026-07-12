@@ -64,15 +64,14 @@ jobs:
           port: 22
           script: |
 
-            cd /home/ec2-user/vprofile
+              cd /home/ec2-user/End-to-End-Ci-CD-pipeline-for-containerized-Java-Web-Application-
 
-            docker compose down
-            
-            docker pull ${{ secrets.DOCKER_USERNAME }}/vprofileapp:latest
-            docker pull ${{ secrets.DOCKER_USERNAME }}/vprofileweb:latest
-            docker pull ${{ secrets.DOCKER_USERNAME }}/vprofiledb:latest
+              docker compose down
 
-            docker compose up -d
+              docker pull ${{ secrets.DOCKER_USERNAME }}/vprofileapp:latest
+              docker pull ${{ secrets.DOCKER_USERNAME }}/vprofileweb:latest
+              docker pull ${{ secrets.DOCKER_USERNAME }}/vprofiledb:latest
 
+              docker compose up -d
 
-            docker ps
+              docker ps
